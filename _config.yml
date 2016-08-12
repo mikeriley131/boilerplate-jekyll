@@ -20,7 +20,16 @@ github_username:  mikeriley131
 host: localhost
 
 include: ['_assets', '_pages']
-exclude: ['Gruntfile.js', 'package.json', 'to-do.md', 'node_modules']
+exclude: [
+  'Gruntfile.js',
+  'package.json',
+  'to-do.md',
+  'node_modules',
+  'bower_components',
+  '_assets/scss/*',
+  '_assets/js/formConfirmation.js',
+  '_assets/js/locations.js'
+]
 
 defaults:
   -
