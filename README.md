@@ -13,28 +13,28 @@ Pyrographic Design's HTML/CSS boilerplate for builds using Jekyll
 ## Folder Structure
 root  
 +-- _assets  
-|   +-- scss  
-|       +-- partials  
-|           +-- _boilerplate.scss  
-|           +-- _fonts.scss  
-|           +-- _footer.scss  
-|           +-- _forms.scss  
-|           +-- _global.scss  
-|           +-- _header.scss  
-|           +-- _helpers.scss  
-|           +-- _home.scss  
-|           +-- _interior.scss  
-|           +-- _mq-helper.scss  
-|           +-- _normalize.scss  
-|           +-- _susy.scss  
-|           +-- _variables.scss  
-|       +-- main.scss  
+|&nbsp;&nbsp;+-- scss  
+|&nbsp;&nbsp;&nbsp;&nbsp;+-- partials  
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- _boilerplate.scss  
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- _fonts.scss  
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- _footer.scss  
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- _forms.scss  
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- _global.scss  
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- _header.scss  
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- _helpers.scss  
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- _home.scss  
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- _interior.scss  
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- _mq-helper.scss  
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- _normalize.scss  
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- _susy.scss  
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- _variables.scss  
+|&nbsp;&nbsp;&nbsp;&nbsp;+-- main.scss  
 +-- _includes  
-|   +-- footer.html  
-|   +-- head.html  
-|   +-- header.html 
+|&nbsp;&nbsp;+-- footer.html  
+|&nbsp;&nbsp;+-- head.html  
+|&nbsp;&nbsp;+-- header.html 
 +-- _layouts  
-|   +-- default.html  
+|&nbsp;&nbsp;+-- default.html  
 +-- .gitignore  
 +-- _config.yml  
 +-- Gruntfile.js  
