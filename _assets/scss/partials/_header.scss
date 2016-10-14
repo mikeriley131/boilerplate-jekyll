@@ -1,3 +1,40 @@
 /* ===========================================================================
 ==== HEADER
 ============================================================================== */
+.header {
+  margin: 1em 0;
+
+  @include brk-med {
+    margin: 3em 0;
+  }
+}
+
+.site-title {
+
+  @include brk-med {
+    flex-grow: 2;
+  }
+}
+
+.contact {
+  margin-left: 2em;
+
+  @include brk-med {
+    flex-grow: 5;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  a {
+    color: $text-clr;
+    text-decoration: none;
+    transition: color .5s ease;
+
+    &:hover,
+    &:active {
+      color: $highlight-clr;
+    }
+  }
+}

@@ -35,21 +35,23 @@ $brk-xlarge-width: 75em;
 
 /* FONTS
 ------------------------------------------------------------------------------ */
-$font-stack: Helvetica, Arial, sans-serif;
+$font-stack: 'Arimo', Helvetica, Arial, sans-serif;
 
 /* COLORS
 ------------------------------------------------------------------------------ */
+$orange: #fc4314;
+$white: #fff;
 $grey: #999;
 $grey-light: #eee;
 $grey-dark: #666;
-$text: #222;
+$text: #676767;
 
 /* COLOR CONFIGS
 ------------------------------------------------------------------------------ */
-$bg-clr: $grey-light;
+$bg-clr: $white;
 $text-clr: $text;
-$link-clr: red;
-$highlight-clr: red;
+$link-clr: $text;
+$highlight-clr: $orange;
 
 /* WIDTHS
 ------------------------------------------------------------------------------ */

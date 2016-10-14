@@ -1,3 +1,53 @@
 /* ===========================================================================
 ==== HOME PAGE STYLES
 ============================================================================== */
+.splash-image-row {
+  border-top: 7px solid $highlight-clr;
+  border-bottom: 7px solid $highlight-clr;
+  margin: 0;
+  overflow: auto;
+  padding: 0;
+  width: 100%;
+
+  li {
+    padding: .5em;
+    padding-top: 0;
+    width: 100%;
+
+    &:first-child {
+      padding-top: .5em;
+    }
+
+    img {
+      margin: 0 auto;
+    }
+
+    @include brk-med {
+      float: left;
+      margin: 1%;
+      margin-left: 0;
+      padding: 0;
+      width: 32.66666%;
+
+      &:first-child {
+        padding-top: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.social-link {
+  border: none;
+  display: block;
+  margin: 1em auto 0;
+  transition: width .33s ease;
+  width: 2em;
+
+  &:hover {
+    width: 2.25em;
+  }
+}

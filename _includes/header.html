@@ -2,25 +2,23 @@
 
     <header class="header">
 
-      <div class="container">
+      <div class="container" itemscope itemtype="http://schema.org/LocalBusiness">
 
-        <h1 class="visuallyhidden">{{ site.title }}</h1>
+        <h1 class="visuallyhidden" itemprop="name">{{ site.title }}</h1>
         <a class="site-title" href="{{ site.url }}/">
-          <img class="logo" src="" alt="">
+          <img class="logo" itemprop="logo" src="_assets/images/jtn-splash-logo.jpg" alt="">
         </a>
 
-        <nav class="nav__primary">
-          {% for my_page in site.pages %}
-            {% if my_page.title %}
-            <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-            {% endif %}
-          {% endfor %}
-        </nav>
+        <div class="contact">
+          <p><strong itemprop="description">residential+commercial interiors</strong></p>
+
+          <p>IIDA member<br>
+          <span itemprop="telephone">443.604.1815</span><br>
+          <a href="mailto:&#106;&#101;&#110;&#110;&#105;&#102;&#101;&#114;&#064;&#106;&#116;&#110;&#100;&#101;&#115;&#105;&#103;&#110;&#046;&#099;&#111;&#109;" itemprop="email">&#106;&#101;&#110;&#110;&#105;&#102;&#101;&#114;&#064;&#106;&#116;&#110;&#100;&#101;&#115;&#105;&#103;&#110;&#046;&#099;&#111;&#109;</a></p>
+        </div>
 
       </div> <!-- END CONTAINER -->
 
     </header>
 
     <main class="main">
-
-      <div class="container">

@@ -6,12 +6,12 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: SITE TITLE
-email: SITE CONTACT
+title: JTN Design
+email: jennifer@jtndesign.com
 description: > # this means to ignore newlines until "baseurl:"
-  SITE DESCRIPTION"
+  "Commercial and Interior Design for the Baltimore area."
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "SITE URL" # the base hostname & protocol for your site
+url: "http://www.jtndesign.com" # the base hostname & protocol for your site
 
 # you can create whatever you'd like and reference it via site.key
 twitter_username: mikeriley131
