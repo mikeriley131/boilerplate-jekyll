@@ -3,13 +3,12 @@
 ============================================================================== */
 body {
   background: $bg-clr;
-  color: $text-clr;
+  counter-reset: number;
   font-family: $font-stack;
-  line-height: 1.4
 }
 
 main {
-  padding: 1em 0;
+  padding: 2em 0;
 
   p {
     margin-bottom: 1.5em;
@@ -29,30 +28,104 @@ main {
 
     }
   }
+
+  ul {
+
+    li:before {
+      content: '\2219';
+      color: $highlight-clr;
+      margin-right: .5em;
+    }
+  }
+
+  ol {
+
+    li:before {
+      counter-increment: number;
+      content: counter(number);
+      color: $highlight-clr;
+      margin-right: .5em;
+    }
+  }
+
+  li {
+    text-indent: -1.5em;
+    padding-left: 1.5em;
+    margin-bottom: .5em;
+  }
+
+  li {
+    text-indent: -1.5em;
+    padding-left: 1.5em;
+    margin-bottom: .5em;
+  }
 }
 
-ul {
+h2 {
+  margin-bottom: .5em;
+}
+
+h3, h4, h5, h6 {
+  margin-bottom: .25em;
+}
+
+ul, ol {
   list-style-type: none;
   padding: 0;
   margin: 0;
   margin-bottom: 1em;
 }
 
+blockquote {
+  font-size: 1.25em;
+  font-style: italic;
+  padding: 0 1em;
+  border-left: 4px solid $highlight-clr;
+}
+
 img {
   display: block;
   max-width: 100%;
+  width: 100%;
+}
+
+small {
+  font-size: .85em;
+  margin-bottom: 1em;
+}
+
+iframe {
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+table {
+  margin-bottom: 2em;
+}
+
+tr {
+  &:nth-child(even) {
+    background: $grey;
+  }
+}
+
+th {
+  border-bottom: 1px solid $highlight-clr;
+  padding: .5em;
+  padding-bottom: 0;
+  text-align: left;
+}
+
+td {
+  padding: .5em;
 }
 
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  margin: 0 auto;
-  width: 100%;
+  @include container;
   padding: 0 .5em;
 
-  @include brk-med {
+  @include brk-large {
     padding: 0;
-    width: 600px;
   }
 }
