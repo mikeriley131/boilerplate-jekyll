@@ -1,6 +1,9 @@
-/**
- * Used for development only:
- */
+// ===========================================================================
+// ==== SHOW MQ BREAKPOINT IN BOTTOM RIGHT CORNER
+// ===========================================================================
+
+// Used for development only
+
 body:before {
   background: $grey-dark;
   bottom: 0;

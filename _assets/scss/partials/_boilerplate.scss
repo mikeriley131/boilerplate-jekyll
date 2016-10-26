@@ -12,8 +12,10 @@
    ========================================================================== */
 
 html {
+  font-size: 100%; // Fallback for @include below. Set to browser default and then use ems when declaring your various font-sizes. (MR)
+  @include fluid-type(font-size, 480px, 1600px, 16px, 18px);
+
   color: #222;
-  font-size: 100%; // Set to browser default and then use ems when declaring your various font-sizes. (MR)
   line-height: 1.618; // Golden Ratio, arguably optimal line-height. (MR)
 }
 
