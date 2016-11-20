@@ -19,13 +19,37 @@ main {
   }
 
   a {
+    background-image: linear-gradient(to right, currentColor 0%, currentColor 100%);
+    background-position: bottom .05em center;
+    background-repeat: repeat-x;
+    background-size: 100% .05em;
     color: $link-clr;
     text-decoration: none;
-    border-bottom: 1px solid $link-clr;
+    text-shadow: .05em 0 0 $link-clr,
+                 -.05 0 0 $link-clr,
+                 0 .05 0 $link-clr,
+                 0 -.05 0 $link-clr,
+                 .1em 0 0 $link-clr,
+                 -.1em 0 0 $link-clr,
+                 0 .1em 0 $link-clr,
+                 0 -.1em 0 $link-clr;
 
     &:hover,
     &:active {
+      color: darken($link-clr, 20%)
+    }
 
+    &:focus {
+      background-color: #cef;
+      outline: none;
+      text-shadow: .05em 0 0 #cef,
+                   -.05 0 0 #cef,
+                   0 .05 0 #cef,
+                   0 -.05 0 #cef,
+                   .1em 0 0 #cef,
+                   -.1em 0 0 #cef,
+                   0 .1em 0 #cef,
+                   0 -.1em 0 #cef;
     }
   }
 

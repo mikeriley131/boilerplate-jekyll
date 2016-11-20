@@ -16,32 +16,37 @@
     <!-- No link, just place a file called favicon.ico in the root directory -->
 
     <!-- For IE 11, Chrome, Firefox, Safari, Opera -->
-    <link rel="icon" href="_assets/images/icons/favicon-16x16.png" sizes="16x16" type="image/png">
-    <link rel="icon" href="_assets/images/icons/favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="_assets/images/icons/favicon-48x48.png" sizes="48x48" type="image/png">
-    <link rel="icon" href="_assets/images/icons/favicon-62x62.png" sizes="62x62" type="image/png">
-    <link rel="icon" href="_assets/images/icons/favicon-192x192.png" sizes="192x192" type="image/png">
+    <!-- Use http://realfavicongenerator.net/ -->
+    <!-- Place files in root directory -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
 
-    <!-- For Apple touch devices -->
-    <link rel="apple-touch-icon" sizes="57x57" href="_assets/images/icons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="_assets/images/icons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="_assets/images/icons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="_assets/images/icons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="_assets/images/icons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="_assets/images/icons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="_assets/images/icons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="_assets/images/icons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="_assets/images/icons/apple-icon-180x180.png">
-    <!-- More info: https://bitsofco.de/all-about-favicons-and-touch-icons/ -->
-
+    <!-- FB meta tags -->
     <meta property="og:url" content="{{ site.url }}">
     <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ site.title }}">
     <meta property="og:image" content="{{ site.url }}/image.jpg">
-    <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}>
+    <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
     <meta property="og:site_name" content="{{ site.title }}">
     <meta property="og:locale" content="en_US">
     <!-- Facebook: https://developers.facebook.com/docs/sharing/webmasters#markup -->
     <!-- Open Graph: http://ogp.me/ -->
+    <!-- Validate: https://developers.facebook.com/tools/debug/ -->
+
+    <!-- Twitter meta tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="{{ site.twitter_username }}">
+    <meta name="twitter:creator" content="{{ site.twitter_username }}">
+    <meta name="twitter:url" content="{{ site.url }}">
+    <meta name="twitter:title" content="{{ site.title }}">
+    <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 200 }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="twitter:image" content="{{ site.url }}/image.jpg">
+    <!-- More info: https://dev.twitter.com/cards/getting-started -->
+    <!-- Validate: https://dev.twitter.com/docs/cards/validation/validator -->
 
     <!--[if lt IE 9]>
       <script src="http://html5shiv-printshiv.googlecode.com/svn/trunk/html5shiv-printshiv.js"></script>

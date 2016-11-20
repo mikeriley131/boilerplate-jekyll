@@ -13,10 +13,10 @@
 
 html {
   font-size: 100%; // Fallback for @include below. Set to browser default and then use ems when declaring your various font-sizes. (MR)
+  font-size: calc(1em + 1vw); // Implicitly scalable
   @include fluid-type(font-size, 480px, 1600px, 16px, 18px);
 
   color: #222;
-  line-height: 1.618; // Golden Ratio, arguably optimal line-height. (MR)
 }
 
 /*
@@ -94,6 +94,18 @@ html {
 }
 *, *:before, *:after {
   box-sizing: inherit;
+}
+
+/* Skip link
+-------------------------------------------------------------------*/
+[href="#main"] {
+  position: absolute;
+  top: 0;
+  right: 100%;
+}
+
+[href="#main"]:focus {
+  right: auto;
 }
 
 /* Typography
@@ -345,6 +357,10 @@ code {
                                http://www.sanbeiji.com/archives/953 */
     box-shadow: none !important;
     text-shadow: none !important;
+  }
+
+  body > *:not(main) {
+    display: none;
   }
 
   a,
