@@ -12,11 +12,15 @@
         </a>
 
         <nav class="nav__primary">
-          {% for my_page in site.pages %}
-            {% if my_page.title %}
-            <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-            {% endif %}
-          {% endfor %}
+          <ul class="nav__primary--list">
+            {% for my_page in site.pages %}
+              {% if my_page.title %}
+              <li class="nav__primary--item">
+                <a class="nav__primary--link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+              </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
         </nav>
 
       </div> <!-- END CONTAINER -->

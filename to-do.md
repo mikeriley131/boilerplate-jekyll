@@ -1,2 +1,8 @@
+- set up development environment
+- complete `_config.yml` file
+- homepage template
+- categories template
+- interior page template
+- cross-browser testing
 - favicon
-- Google Analytics
+- google analytics
