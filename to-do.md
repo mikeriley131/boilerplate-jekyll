@@ -1,8 +1,21 @@
 - set up development environment
 - complete `_config.yml` file
+- header template
+- footer template
 - homepage template
 - categories template
 - interior page template
+- add site content
+- custom 404 page
+- accessibility audits
+- SEO audit
+  - http://seositecheckup.com/
+- performance tests
+  - https://www.webpagetest.org
+  - https://developers.google.com/speed/pagespeed/insights/
+  - YSlow extension
 - cross-browser testing
 - favicon
 - google analytics
+- update `_config.yml` file for launch
+- launch
