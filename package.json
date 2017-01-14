@@ -22,7 +22,7 @@
   "js": {
     "_assets/js/main.min.js": [
       "bower_components/jquery/dist/jquery.min.js",
-      "_assets/js/main.js"
+      "_assets/src/js/*.js"
     ]
   }
 }

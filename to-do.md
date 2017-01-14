@@ -6,6 +6,8 @@
 - categories template
 - interior page template
 - add site content
+- obfuscate email addresses
+- add schema.org metadata
 - custom 404 page
 - accessibility audits
 - SEO audit

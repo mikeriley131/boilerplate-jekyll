@@ -9,6 +9,9 @@ module.exports = function(grunt) {
     },
     // Jekyll
     jekyll: {
+      options: {
+        incremental: true
+      },
       build: {
         dest: '_site'
       }
@@ -23,7 +26,7 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,     // Enable dynamic expansion.
-          cwd: '_assets/scss',
+          cwd: '_assets/src/scss',
           src: ['*.scss'],  // Actual pattern(s) to match.
           dest: '_assets/css/',
           ext: '.min.css'  // Dest filepaths will have this extension.
@@ -37,7 +40,7 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,     // Enable dynamic expansion.
-          cwd: '_assets/scss',
+          cwd: '_assets/src/scss',
           src: ['*.scss'],  // Actual pattern(s) to match.
           dest: '_assets/css/',
           ext: '.css'      // Dest filepaths will have this extension.
@@ -73,7 +76,7 @@ module.exports = function(grunt) {
         tasks: ['sass', 'autoprefixer']
       },
       scripts: {
-        files: '_assets/js/*.js',
+        files: '_assets/src/js/*.js',
         tasks: ['uglify']
       },
       jekyll: {

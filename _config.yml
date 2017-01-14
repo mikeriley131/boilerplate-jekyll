@@ -27,8 +27,7 @@ exclude: [
   'node_modules',
   'bower_components',
   '_assets/scss/*',
-  '_assets/js/formConfirmation.js',
-  '_assets/js/locations.js'
+  '_assets/css/main.css'
 ]
 
 defaults:
