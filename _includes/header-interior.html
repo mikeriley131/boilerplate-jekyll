@@ -4,28 +4,7 @@
 
     <header class="header" role="banner">
 
-      <div class="container">
-
-        <h1 class="visuallyhidden">{{ site.title }}</h1>
-        <a class="site-title" href="{{ site.url }}/">
-          <img class="logo" src="" alt="">
-        </a>
-
-        <nav class="nav__primary">
-          {% strip %}
-          <ul class="nav__primary--list">
-          {% for my_page in site.pages %}
-            {% if my_page.title %}
-            <li class="nav__primary--item">
-              <a class="nav__primary--link" href="{{ my_page.url | prepend: site.url }}">{{ my_page.title }}</a>
-            </li>
-            {% endif %}
-          {% endfor %}
-          </ul>
-          {% endstrip %}
-        </nav>
-
-      </div> <!-- END CONTAINER -->
+      {% include header-content.html %}
 
     </header>
 

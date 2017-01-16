@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+  module.exports = function(grunt) {
 
   require('time-grunt')(grunt);
 
@@ -9,9 +9,6 @@ module.exports = function(grunt) {
     },
     // Jekyll
     jekyll: {
-      options: {
-        incremental: true
-      },
       build: {
         dest: '_site'
       }
@@ -84,7 +81,7 @@ module.exports = function(grunt) {
           'index.html',
           '_includes/*.html',
           '_layouts/*.html',
-          '_pages/*.html',
+          '_pages/**/*.html',
           '_assets/css/*.css',
           '_assets/js/*.js',
           '!_site/**/*' // Stops watch from triggering again after Jekyll compiles
@@ -94,7 +91,7 @@ module.exports = function(grunt) {
     },
     // BrowserSync
     browserSync: {
-      files: ['_site/*.html', '_site/_assets/css/*.css', '_site/_assets/js/*.js'],
+      files: ['_site/**/*.*'],
       options: {
         watchTask: true,
         server: {
