@@ -5,7 +5,7 @@
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     meta: {
-      banner: '/* <%= pkg.name %> v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> - Written by <%= pkg.author %> (<%= pkg.contact %>) */\n'
+      banner: '/* <%= pkg.name %> v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd-HH-MM") %> - Written by <%= pkg.author %> (<%= pkg.contact %>) */\n'
     },
     // Jekyll
     jekyll: {

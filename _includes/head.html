@@ -9,7 +9,7 @@
     <meta name="url" content="{{ site.url }}">
     
     <!-- Document Title -->
-    <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+    <title>{% if page.title %}{{ page.title | escape }} | {{ site.title }}{% else %}{{ site.title | escape }}{% endif %}</title>
     
     <!-- Base URL to use for all relative URLs contained within the document -->
     <base href="{{ site.url }}">
