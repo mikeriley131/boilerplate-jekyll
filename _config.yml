@@ -43,3 +43,9 @@ defaults:
       path: "_pages"
     values:
       layout: "interior"
+
+  -
+    scope:
+      path: "404.html"
+    values:
+      layout: "interior"
