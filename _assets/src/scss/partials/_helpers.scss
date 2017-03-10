@@ -12,12 +12,15 @@ $cell-margin: .5rem;
 .flex-grid {
   &__wrapper {
     margin: 1rem 0;
+    max-width: 960px;
   }
 
   &__grid {
     display: flex;
     flex-wrap: wrap;
-    margin: $grid-margin;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 
     > * {
       flex: 1 0 $flex-basis;
