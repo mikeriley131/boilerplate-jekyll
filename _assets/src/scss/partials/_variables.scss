@@ -4,31 +4,31 @@
 
 /* RESPONSIVE MEDIA QUERIES
 ------------------------------------------------------------------------------ */
-$brk-width-small: 30em;
-$brk-width-med: 45em;
-$brk-width-large: 60em;
-$brk-width-xlarge: 75em;
+$brk-small-width: 30em;
+$brk-med-width: 45em;
+$brk-large-width: 60em;
+$brk-xlarge-width: 75em;
 
 @mixin brk-small {
-  @media screen and (min-width: $brk-width-small) {
+  @media screen and (min-width: $brk-small-width) {
     @content;
   }
 }
 
 @mixin brk-med {
-  @media screen and (min-width: $brk-width-med) {
+  @media screen and (min-width: $brk-med-width) {
     @content;
   }
 }
 
 @mixin brk-large {
-  @media screen and (min-width: $brk-width-large) {
+  @media screen and (min-width: $brk-large-width) {
     @content;
   }
 }
 
 @mixin brk-xlarge {
-  @media screen and (min-width: $brk-width-xlarge) {
+  @media screen and (min-width: $brk-xlarge-width) {
     @content;
   }
 }
@@ -41,10 +41,8 @@ $font-stack: Helvetica, Arial, sans-serif;
 ------------------------------------------------------------------------------ */
 $white: #fff;
 $black: #222;
-$grey-lightest: #f0f0f0;
-$grey-lighter: #959492;
-$grey-light: #eee;
 $grey: #999;
+$grey-light: #eee;
 $grey-dark: #666;
 $text: #222;
 

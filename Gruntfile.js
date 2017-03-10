@@ -48,7 +48,7 @@
     autoprefixer: {
       dist: {
         options: {
-          browsers: ['last 2 versions', 'safari 8', 'ie 8', 'ie 9', '> 1%']
+          browsers: ['last 2 versions', 'ie 8', 'ie 9', '> 1%']
         },
         files:{
           '_assets/css/main.css':'_assets/css/main.css',
