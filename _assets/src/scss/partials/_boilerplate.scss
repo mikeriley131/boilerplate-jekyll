@@ -1,3 +1,5 @@
+// sass-lint:disable no-css-comments, mixins-before-declarations, no-vendor-prefixes, single-line-per-selector, force-pseudo-nesting, force-element-nesting, force-attribute-nesting, no-qualifying-elements, class-name-format
+
 /*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
 /* (modified to suit site) */
 
@@ -10,14 +12,16 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
-
 html {
+  box-sizing: border-box;
+  color: $text-clr;
   font-size: 100%; // Fallback for @include below. Set to browser default and then use ems when declaring your various font-sizes. (MR)
   font-size: calc(1em + 1vw); // Implicitly scalable
-  // fluid typography: https://madebymike.com.au/writing/precise-control-responsive-typography/
   @include fluid-type(font-size, 480px, 1600px, 16px, 18px);
+}
 
-  color: $text-clr;
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 /*
@@ -29,12 +33,12 @@ html {
  */
 
 ::-moz-selection {
-  background: #b3d4fc;
+  background: $highlight-clr;
   text-shadow: none;
 }
 
 ::selection {
-  background: #b3d4fc;
+  background: $highlight-clr;
   text-shadow: none;
 }
 
@@ -43,10 +47,10 @@ html {
  */
 
 hr {
+  border: 0;
+  border-top: 1px solid $grey;
   display: block;
   height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
   margin: 1em 0;
   padding: 0;
 }
@@ -88,21 +92,12 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-/* More intuitive box model
------------------------------------------------------------------------------- */
-html {
-  box-sizing: border-box; // More intuitive box model.
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
 /* Skip link
 -------------------------------------------------------------------*/
 .skip-link {
   position: absolute;
-  top: 0;
   right: 100%;
+  top: 0;
 }
 
 .skip-link:focus {
@@ -119,7 +114,7 @@ body {
 }
 
 body, caption, th, td, input, textarea, select, option, legend, fieldset, h1, h2, h3, h4, h5, h6 {
-  font-size-adjust: 0.5;
+  font-size-adjust: .5;
 }
 
 main {
@@ -164,9 +159,9 @@ h2 {
 
 h3 {
   font-size: 1.375em; // 22px
+  font-variant: small-caps;
   line-height: 1.13636364; // 25px
   text-transform: lowercase;
-  font-variant: small-caps;
 
   @include brk-med {
     font-size: 1.5em; // 24px
@@ -209,19 +204,22 @@ blockquote {
   }
 }
 
-dl {
-  line-height: 1.25;
-}
-
 /* Only set margins below primary text elements for more intuitive spacing
 ------------------------------------------------------------------------------ */
-h1, h2, h3,h4 ,h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin-top: 0;
 }
 
 /* Lists
 ------------------------------------------------------------------------------ */
-ul, ol {
+ul,
+ol {
   margin: 0;
   padding: 0 1em 1em;
 }
@@ -239,8 +237,9 @@ li {
 }
 
 dl {
+  line-height: 1.25;
   margin: 0;
-  padding: 0 0 1em 0;
+  padding: 0 0 1em;
 }
 
 /* Code formatting
@@ -250,7 +249,7 @@ pre {
 }
 
 code {
-  background: #eee;
+  background-color: $grey-light;
 }
 
 /* ==========================================================================
@@ -262,7 +261,7 @@ code {
  */
 
 .hidden {
-  display: none !important;
+  display: none !important; // sass-lint:disable-line no-important
 }
 
 /*
@@ -319,16 +318,16 @@ code {
 
 .clearfix:before,
 .clearfix:after {
-    content: ""; /* 1 */
-    display: table; /* 2 */
+  content: ''; /* 1 */
+  display: table; /* 2 */
 }
 
 .clearfix:after {
-    clear: both;
+  clear: both;
 }
 
 .clearfix {
-    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+  zoom: 1; /* For IE 6/7 (trigger hasLayout) */
 }
 
 /* ==========================================================================
@@ -338,27 +337,26 @@ code {
    ========================================================================== */
 
 @media print,
-   (-webkit-min-device-pixel-ratio: 1.25),
-   (min-resolution: 1.25dppx),
-   (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
 }
 
 /* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   http://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
+  Print styles.
+  Inlined to avoid the additional HTTP request:
+  http://www.phpied.com/delay-loading-your-print-css/
+  ========================================================================== */
 
 @media print {
   *,
   *:before,
   *:after {
-    background: transparent !important;
-    color: #000 !important; /* Black prints faster:
-                               http://www.sanbeiji.com/archives/953 */
-    box-shadow: none !important;
-    text-shadow: none !important;
+    background: transparent !important; // sass-lint:disable-line no-important
+    box-shadow: none !important; // sass-lint:disable-line no-important
+    color: $black !important; // sass-lint:disable-line no-important
+    text-shadow: none !important; // sass-lint:disable-line no-important
   }
 
   body > *:not(main) {
@@ -371,11 +369,11 @@ code {
   }
 
   a[href]:after {
-    content: " (" attr(href) ")";
+    content: ' (' attr(href) ')';
   }
 
   abbr[title]:after {
-    content: " (" attr(title) ")";
+    content: ' (' attr(title) ')';
   }
 
   /*
@@ -383,14 +381,14 @@ code {
    * or use the `javascript:` pseudo protocol
    */
 
-  a[href^="#"]:after,
-  a[href^="javascript:"]:after {
-    content: "";
+  a[href^='#']:after,
+  a[href^='javascript:']:after {
+    content: '';
   }
 
   pre,
   blockquote {
-    border: 1px solid #999;
+    border: 1px solid $grey-lighter;
     page-break-inside: avoid;
   }
 
@@ -409,7 +407,7 @@ code {
   }
 
   img {
-    max-width: 100% !important;
+    max-width: 100% !important; // sass-lint:disable-line no-important
   }
 
   p,
