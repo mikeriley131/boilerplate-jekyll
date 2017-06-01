@@ -16,9 +16,9 @@ body {
     right: 0;
     z-index: 999;
 
-    @include brk-small { content: 'S'; }
-    @include brk-med { content: 'M'; }
-    @include brk-large { content: 'L'; }
-    @include brk-xlarge { content: 'XL'; }
+    @include mq($S) { content: 'S'; }
+    @include mq($M) { content: 'M'; }
+    @include mq($L) { content: 'L'; }
+    @include mq($XL) { content: 'XL'; }
   }
 }

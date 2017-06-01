@@ -14,11 +14,8 @@ rules:
     - 1
     -
       'exclude':
-        - 'brk-xsmall'
-        - 'brk-small'
-        - 'brk-med'
-        - 'brk-large'
-        - 'brk-xlarge'
+        - 'mq'
+        - 'poly-fluid-sizing'
         - 'span' # Susy grids
 
   # Line Spacing

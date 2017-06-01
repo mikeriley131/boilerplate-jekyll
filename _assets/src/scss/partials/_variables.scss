@@ -4,30 +4,63 @@
 
 // RESPONSIVE MEDIA QUERIES
 // ------------------------------------------------------------------------------
-$brk-width-small: 30em;
-$brk-width-med: 45em;
-$brk-width-large: 60em;
-$brk-width-xlarge: 75em;
+$breakpoint-xs: 18.75em;  // 300px
+$breakpoint-s: 30em;      // 480px
+$breakpoint-m: 45em;      // 720px
+$breakpoint-l: 60em;      // 960px
+$breakpoint-xl: 75em;     // 1200px
+$breakpoint-xxl: 90em;    // 1440px
 
-@mixin brk-small {
+$XS: 'min-width:'+ $breakpoint-xs;
+$S: 'min-width:'+ $breakpoint-s;
+$M: 'min-width:'+ $breakpoint-m;
+$L: 'min-width:'+ $breakpoint-l;
+$XL: 'min-width:'+ $breakpoint-xl;
+$XXL: 'min-width:'+ $breakpoint-xxl;
+
+@mixin mq($S) {
   @media screen and (min-width: $brk-width-small) {
     @content;
   }
 }
 
-@mixin brk-med {
+@mixin mq($M) {
   @media screen and (min-width: $brk-width-med) {
     @content;
   }
 }
 
-@mixin brk-large {
+@mixin mq($L) {
   @media screen and (min-width: $brk-width-large) {
     @content;
   }
 }
 
-@mixin brk-xlarge {
+@mixin mq($XL) {
+  @media screen and (min-width: $brk-width-xlarge) {
+    @content;
+  }
+}
+
+@mixin mq($S) {
+  @media screen and (min-width: $brk-width-small) {
+    @content;
+  }
+}
+
+@mixin mq($M) {
+  @media screen and (min-width: $brk-width-med) {
+    @content;
+  }
+}
+
+@mixin mq($L) {
+  @media screen and (min-width: $brk-width-large) {
+    @content;
+  }
+}
+
+@mixin mq($XL) {
   @media screen and (min-width: $brk-width-xlarge) {
     @content;
   }

@@ -16,8 +16,9 @@ html {
   box-sizing: border-box;
   color: $text-clr;
   font-size: 100%; // Fallback for @include below. Set to browser default and then use ems when declaring your various font-sizes. (MR)
-  font-size: calc(1em + 1vw); // Implicitly scalable
-  @include fluid-type(font-size, 480px, 1600px, 16px, 18px);
+  
+  $map: (18.75em: 1em, 45em: 1.0625em, 60em: 1.125em, 75em: 1.25em); // (300px / 720px / 960px / 1200px)
+  @include poly-fluid-sizing('font-size', $map);;
 }
 
 *, *:before, *:after {
@@ -124,7 +125,7 @@ main {
   font-size: 1.125em; // 18px
   line-height: 1.5; // 27px
 
-  @include brk-med {
+  @include mq($M) {
     font-size: 1.125em; // 18px
     line-height: 1.66; // 30px
   }
@@ -134,12 +135,12 @@ h1 {
   font-size: 2em; // 32px
   line-height: 1.25; // 40px
 
-  @include brk-med {
+  @include mq($M) {
     font-size: 2.5em; // 40px
     line-height: 1.125; // 45px
   }
 
-  @include brk-xlarge {
+  @include mq($XL) {
     font-size: 3em; // 48px
     line-height: 1.05; // 50px
   }
@@ -149,12 +150,12 @@ h2 {
   font-size: 1.625em; // 26px
   line-height: 1.15384615; // 30px
 
-  @include brk-med {
+  @include mq($M) {
     font-size: 2em; // 32px
     line-height: 1.25; // 40px
   }
 
-  @include brk-xlarge {
+  @include mq($XL) {
     font-size: 2.25em; // 36px
     line-height: 1.25; // 45px
   }
@@ -166,12 +167,12 @@ h3 {
   line-height: 1.13636364; // 25px
   text-transform: lowercase;
 
-  @include brk-med {
+  @include mq($M) {
     font-size: 1.5em; // 24px
     line-height: 1.25; // 30px
   }
 
-  @include brk-xlarge {
+  @include mq($XL) {
     font-size: 1.75em; // 28px
     line-height: 1.25; // 35px
   }
@@ -181,12 +182,12 @@ h4 {
   font-size: 1.125em; // 18px
   line-height: 1.11111111; // 20px
 
-  @include brk-med {
+  @include mq($M) {
     font-size: 1.25em; // 20px
     line-height: 1.25; // 25px
   }
 
-  @include brk-xlarge {
+  @include mq($XL) {
     font-size: 1.5em; // 24px
     line-height: 1.25; // 30px
   }
@@ -196,12 +197,12 @@ blockquote {
   font-size: 1.25em; // 20px
   line-height: 1.25; // 25px
 
-  @include brk-med {
+  @include mq($M) {
     font-size: 1.5em; // 24px
     line-height: 1.25; // 30px
   }
 
-  @include brk-xlarge {
+  @include mq($XL) {
     font-size: 1.75em; // 30px
     line-height: 1.25; // 36px
   }

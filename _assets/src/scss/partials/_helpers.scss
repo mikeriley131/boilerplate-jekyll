@@ -85,7 +85,7 @@ $cell-margin: .5rem;
   width: 100%;
 }
 
-@include brk-small {
+@include mq($S) {
   .xshort,
   .short,
   .med {
@@ -115,7 +115,7 @@ $cell-margin: .5rem;
   }
 }
 
-@include brk-large {
+@include mq($L) {
   .xshort {
     width: 6.25%;
   }
