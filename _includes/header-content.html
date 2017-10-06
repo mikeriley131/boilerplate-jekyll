@@ -1,19 +1,19 @@
 <h1 class="visuallyhidden">{{ site.title }}</h1>
-      <a class="site-title" href="{{ site.url }}/">
-        <img class="logo" src="{{ site.baseurl }}_assets/images/bergin-creative-logo.svg" alt="Bergin Creative logo">
-      </a>
+<a class="site-title" href="{{ site.url }}/">
+  <img class="logo" src="{{ site.baseurl }}_assets/images/logo.svg" alt="logo">
+</a>
 
-      <nav class="nav__primary" role="navigation">
-        {% strip %}
-        {% assign pages = site.pages | sort:"weight" %}
-        <ul class="nav__primary--list">
-        {% for my_page in pages %}
-          {% if my_page.title %}
-          <li class="nav__primary--item">
-            <a class="nav__primary--link" href="{{ my_page.url | prepend: site.url }}">{{ my_page.title }}</a>
-          </li>
-          {% endif %}
-        {% endfor %}
-        </ul>
-        {% endstrip %}
-      </nav>
+<nav class="nav__primary" role="navigation">
+  {% strip %}
+  {% assign pages = site.pages | sort:"weight" %}
+  <ul class="nav__primary--list">
+  {% for my_page in pages %}
+    {% if my_page.title %}
+    <li class="nav__primary--item">
+      <a class="nav__primary--link" href="{{ my_page.url | prepend: site.url }}">{{ my_page.title }}</a>
+    </li>
+    {% endif %}
+  {% endfor %}
+  </ul>
+  {% endstrip %}
+</nav>

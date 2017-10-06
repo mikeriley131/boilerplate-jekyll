@@ -7,3 +7,7 @@ _site
 .jekyll-metadata
 *.map
 *.scssc
+_config/.DS_Store
+_assets/src/.DS_Store
+_assets/.DS_Store
+.DS_Store

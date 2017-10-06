@@ -14,6 +14,17 @@
       }
     },
 
+    imagemin: {
+      dynamic: {
+        files: [{
+          expand: true,
+          cwd: '_assets/src/images',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: '_assets/images'
+        }]
+      }
+    },
+
     sass: {
       prod: {
         options: {
@@ -77,6 +88,10 @@
     },
 
     watch: {
+      images: {
+        files: ['_assets/src/images/**/*.{png,jpg,gif}'],
+        tasks: ['imagemin'],
+      },
       css: {
         files: '**/*.scss',
         tasks: ['sass', 'sasslint', 'autoprefixer']
@@ -111,6 +126,7 @@
   });
 
   // Load tasks
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-sass-lint');
   grunt.loadNpmTasks('grunt-autoprefixer');
@@ -120,7 +136,7 @@
   grunt.loadNpmTasks('grunt-browser-sync');
 
   // Custom task
-  grunt.registerTask('build', ['sass:prod','sass:dev', 'sasslint', 'autoprefixer:dist', 'uglify', 'jekyll']);
+  grunt.registerTask('build', ['imagemin', 'sass:prod','sass:dev', 'sasslint', 'autoprefixer:dist', 'uglify', 'jekyll']);
 
   // Default task
   grunt.registerTask('default', ['build', 'browserSync', 'watch']);
