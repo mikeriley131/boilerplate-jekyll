@@ -15,13 +15,33 @@
     },
 
     imagemin: {
-      dynamic: {
-        files: [{
-          expand: true,
-          cwd: '_assets/src/images',
-          src: ['**/*.{png,jpg,gif}'],
-          dest: '_assets/images'
-        }]
+      png: {
+        options: {
+          optimizationLevel: 7
+        },
+        files: [
+          {
+            expand: true,                   // set to true to enable the following options
+            cwd: '_assets/src/images/',     // cwd is 'current working directory'
+            src: ['*.png'],                 // match all files with this extension
+            dest: '_assets/images/',        // destination folder for optimized images
+            ext: '.png'                     // give optimized images this extension
+          }
+        ]
+      },
+      jpg: {
+        options: {
+          progressive: true
+        },
+        files: [
+          {
+            expand: true,
+            cwd: '_assets/src/images/',
+            src: ['*.jpg'],
+            dest: '_assets/images/',
+            ext: '.jpg'
+          }
+        ]
       }
     },
 
@@ -140,4 +160,6 @@
 
   // Default task
   grunt.registerTask('default', ['build', 'browserSync', 'watch']);
+
+  //grunt.registerTask('imagemin', ['imagemin']);
 };
