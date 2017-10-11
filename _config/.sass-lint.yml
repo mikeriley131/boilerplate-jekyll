@@ -66,10 +66,17 @@ rules:
   class-name-format:
     - 1
     -
-      'convention':
-      - '^([\.\%]?[a-z]*[-]?[a-z0-9\-]*)(\.[a-z0-9\-]*)?(__[a-z0-9]*[-]?[a-z0-9\-]*)?(--[a-z0-9]*[-]?[a-z0-9\-]*)?(\:[a-z]*)*$'
+      convention: hyphenatedbem
+    -
       'convention-explanation':
       - 'Make sure to properly format your selector in the BEM convention'
+  # class-name-format:
+  #   - 1
+  #   -
+  #     'convention':
+  #     - '^([\.\%]?[a-z]*[-]?[a-z0-9\-]*)(\.[a-z0-9\-]*)?(__[a-z0-9]*[-]?[a-z0-9\-]*)?(--[a-z0-9]*[-]?[a-z0-9\-]*)?(\:[a-z]*)*$'
+  #     'convention-explanation':
+  #     - 'Make sure to properly format your selector in the BEM convention'
 
   function-name-format: 1
   id-name-format: 0
