@@ -16,7 +16,8 @@ html {
   box-sizing: border-box;
   color: $text-clr;
   font-size: 100%; // Fallback for @include below. Set to browser default and then use ems when declaring your various font-sizes. (MR)
-  
+  line-height: 1.5;
+
   $map: (18.75em: 1em, 45em: 1.0625em, 60em: 1.125em, 75em: 1.25em); // (300px / 720px / 960px / 1200px)
   @include poly-fluid-sizing('font-size', $map);;
 }
@@ -96,13 +97,14 @@ textarea {
 /* Skip link
 -------------------------------------------------------------------*/
 .skip-link {
+  padding: .5rem;
   position: absolute;
   right: 100%;
   top: 0;
 }
 
 .skip-link:focus {
-  left: calc(50%);
+  left: calc(50% - 84px);
   right: auto;
 }
 
@@ -121,90 +123,74 @@ body, caption, th, td, input, textarea, select, option, legend, fieldset, h1, h2
   font-size-adjust: .5;
 }
 
-main {
-  font-size: 1.125em; // 18px
-  line-height: 1.5; // 27px
-
-  @include mq($M) {
-    font-size: 1.125em; // 18px
-    line-height: 1.66; // 30px
-  }
+/*
+ * Keep line-length to around 75 characters.
+ */
+p,
+blockquote,
+li {
+  max-width: 35rem;
 }
 
 h1 {
-  font-size: 2em; // 32px
-  line-height: 1.25; // 40px
+  font-size: 1.5rem;
+  line-height: 1.25;
 
   @include mq($M) {
-    font-size: 2.5em; // 40px
-    line-height: 1.125; // 45px
+    font-size: 1.75rem;
+    line-height: 1.125;
   }
 
   @include mq($XL) {
-    font-size: 3em; // 48px
-    line-height: 1.05; // 50px
+    font-size: 2rem;
+    line-height: 1.05;
   }
 }
 
 h2 {
-  font-size: 1.625em; // 26px
-  line-height: 1.15384615; // 30px
+  font-size: 1.125rem;
+  line-height: 1.15384615;
 
   @include mq($M) {
-    font-size: 2em; // 32px
-    line-height: 1.25; // 40px
+    font-size: 1.25rem;
+    line-height: 1.25;
   }
 
   @include mq($XL) {
-    font-size: 2.25em; // 36px
-    line-height: 1.25; // 45px
+    font-size: 1.375rem;
+    line-height: 1.25;
   }
 }
 
 h3 {
-  font-size: 1.375em; // 22px
+  font-size: 1.0625rem;
   font-variant: small-caps;
-  line-height: 1.13636364; // 25px
+  line-height: 1.13636364;
   text-transform: lowercase;
 
   @include mq($M) {
-    font-size: 1.5em; // 24px
-    line-height: 1.25; // 30px
+    font-size: 1.125rem;
+    line-height: 1.25;
   }
 
   @include mq($XL) {
-    font-size: 1.75em; // 28px
-    line-height: 1.25; // 35px
-  }
-}
-
-h4 {
-  font-size: 1.125em; // 18px
-  line-height: 1.11111111; // 20px
-
-  @include mq($M) {
-    font-size: 1.25em; // 20px
-    line-height: 1.25; // 25px
-  }
-
-  @include mq($XL) {
-    font-size: 1.5em; // 24px
-    line-height: 1.25; // 30px
+    font-size: 1.1875rem;
+    line-height: 1.25;
   }
 }
 
 blockquote {
-  font-size: 1.25em; // 20px
-  line-height: 1.25; // 25px
+  font-size: 1.25rem;
+  line-height: 1.25;
 
   @include mq($M) {
-    font-size: 1.5em; // 24px
-    line-height: 1.25; // 30px
+    font-size: 1.5rem;
+    line-height: 1.25;
   }
 
   @include mq($XL) {
-    font-size: 1.75em; // 30px
-    line-height: 1.25; // 36px
+    font-size: 1.75rem;
+    line-height: 1.25;
   }
 }
 

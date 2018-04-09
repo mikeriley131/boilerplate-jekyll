@@ -9,8 +9,8 @@
 title: SITE TITLE
 email: SITE CONTACT
 description: > # this means to ignore newlines until "baseurl:"
-  SITE DESCRIPTION
-baseurl: "http://localhost:3001/" # the subpath of your site, e.g. /blog
+  SITE DESCRIPTION (max 300 chars)
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "http://localhost:3001" # the base hostname & protocol for your site
 
 # you can create whatever you'd like and reference it via site.key
@@ -23,6 +23,7 @@ include: ['_assets', '_pages']
 exclude: [
   'Gruntfile.js',
   'package.json',
+  'package-lock.json',
   'README.md',
   'to-do.md',
   'node_modules',

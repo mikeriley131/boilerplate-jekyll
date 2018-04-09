@@ -32,6 +32,8 @@
   - https://www.webpagetest.org
   - https://developers.google.com/speed/pagespeed/insights/
   - YSlow extension
+- overall audit
+  - https://sonarwhal.com/scanner
 - google analytics
 - update `_config.yml` file for launch
 - launch

@@ -7,17 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description | strip_newlines }}{% endif %}">
     <meta name="url" content="{{ site.url }}">
-    
+
     <!-- Document Title -->
     <title>{% if page.title %}{{ page.title | escape }} | {{ site.title }}{% else %}{{ site.title | escape }}{% endif %}</title>
-    
+
     <!-- Base URL to use for all relative URLs contained within the document -->
     <base href="{{ site.url }}">
 
     <link rel="canonical" href="{{ page.url | prepend: site.url }}">
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:500,800" rel="stylesheet">
-    <link rel="stylesheet" href="{{ "_assets/css/main.min.css" | prepend: site.baseurl }}?{{site.time | date: '%s%N'}}">
+    <link rel="stylesheet" href="/_assets/css/main.min.css?{{site.time | date: '%s%N'}}">
 
     <!-- For IE 10 and below -->
     <!-- No link, just place a file called favicon.ico in the root directory -->

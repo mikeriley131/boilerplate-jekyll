@@ -25,7 +25,7 @@
 @mixin poly-fluid-sizing($property, $map) {
   // Get the number of provided breakpoints
   $length: length(map-keys($map));
-  
+
   // Error if the number of breakpoints is < 2
   @if ($length < 2) {
     @error "poly-fluid-sizing() $map requires at least values"
@@ -36,25 +36,25 @@
   $keys: map-keys($map);
 
   // Minimum size
-  #{$property}: map-get($map, nth($keys,1));
-  
+  #{$property}: map-get($map, nth($keys, 1));
+
   // Interpolated size through breakpoints
   @for $i from 1 through ($length - 1) {
-    @media (min-width:nth($keys,$i)) {
-      $value1: map-get($map, nth($keys,$i));
-      $value2: map-get($map, nth($keys,($i + 1)));
+    @media (min-width:nth($keys, $i)) {
+      $value1: map-get($map, nth($keys, $i));
+      $value2: map-get($map, nth($keys, ($i + 1)));
       // If values are not equal, perform linear interpolation
       @if ($value1 != $value2) {
-        #{$property}: linear-interpolation((nth($keys,$i): $value1, nth($keys,($i+1)): $value2));
+        #{$property}: linear-interpolation((nth($keys, $i): $value1, nth($keys, ($i+1)): $value2));
       } @else {
         #{$property}: $value1;
       }
     }
   }
-  
+
   // Maxmimum size
-  @media (min-width:nth($keys,$length)) {
-    #{$property}: map-get($map, nth($keys,$length));
+  @media (min-width:nth($keys, $length)) {
+    #{$property}: map-get($map, nth($keys, $length));
   }
 }
 
@@ -72,18 +72,18 @@
     @error "linear-interpolation() $map must be exactly 2 values";
   }
   // The slope
-  $m: (map-get($map, nth($keys, 2)) - map-get($map, nth($keys, 1)))/(nth($keys, 2) - nth($keys,1));
-  
+  $m: (map-get($map, nth($keys, 2)) - map-get($map, nth($keys, 1)))/(nth($keys, 2) - nth($keys, 1));
+
   // The y-intercept
   $b: map-get($map, nth($keys, 1)) - $m * nth($keys, 1);
-  
+
   // Determine if the sign should be positive or negative
   $sign: "+";
   @if ($b < 0) {
     $sign: "-";
     $b: abs($b);
   }
-  
+
   @return calc(#{$m*100}vw #{$sign} #{$b});
 }
 
@@ -114,7 +114,7 @@
 @function list-sort($list) {
   $sortedlist: ();
   @while length($list) > 0 {
-    $value: nth($list,1);
+    $value: nth($list, 1);
     @each $item in $list {
       @if $item < $value {
         $value: $item;
@@ -137,7 +137,7 @@
   $newList: ();
   @for $i from 1 through length($list) {
     @if $i != $index {
-      $newList: append($newList, nth($list,$i), 'space');
+      $newList: append($newList, nth($list, $i), 'space');
     }
   }
   @return $newList;

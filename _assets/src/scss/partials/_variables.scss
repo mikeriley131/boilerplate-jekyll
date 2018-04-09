@@ -68,7 +68,7 @@ $XXL: 'min-width:'+ $breakpoint-xxl;
 
 // FONTS
 // ------------------------------------------------------------------------------
-$font-stack: Helvetica, Arial, sans-serif;
+$font-stack: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
 
 // COLORS
 // ------------------------------------------------------------------------------
@@ -96,3 +96,11 @@ $primary-light: lighten($blue, 40%);
 $highlight-clr: $red;
 $error: $red;
 $selection: $yellow;
+
+// SPACING
+// ------------------------------------------------------------------------------
+$space: 1.5rem;
+$double-space: $space*2;
+$half-space: $space/2;
+$quarter-space: $space/4;
+$eighth-space: $space/8;

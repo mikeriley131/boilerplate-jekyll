@@ -45,6 +45,17 @@
       }
     },
 
+    svgo: {
+      dynamic: {
+        files: [{
+          expand: true,
+          cwd: '_assets/src/images/',
+          src: ['*.svg'],
+          dest: '_assets/images/'
+        }]
+      }
+    },
+
     sass: {
       prod: {
         options: {
@@ -147,6 +158,7 @@
 
   // Load tasks
   grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-svgo');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-sass-lint');
   grunt.loadNpmTasks('grunt-autoprefixer');
@@ -156,7 +168,7 @@
   grunt.loadNpmTasks('grunt-browser-sync');
 
   // Custom task
-  grunt.registerTask('build', ['imagemin', 'sass:prod','sass:dev', 'sasslint', 'autoprefixer:dist', 'uglify', 'jekyll']);
+  grunt.registerTask('build', ['imagemin', 'svgo', 'sass:prod','sass:dev', 'sasslint', 'autoprefixer:dist', 'uglify', 'jekyll']);
 
   // Default task
   grunt.registerTask('default', ['build', 'browserSync', 'watch']);
