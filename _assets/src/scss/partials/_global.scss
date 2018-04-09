@@ -73,11 +73,12 @@ h6 {
   margin-bottom: .25rem;
 }
 
-ul,
-ol {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+nav {
+  ul {
+     display: flex;
+     justify-content: space-between;
+     list-style: none;
+  }
 }
 
 blockquote {
@@ -85,11 +86,6 @@ blockquote {
   font-size: 1.25rem;
   font-style: italic;
   padding: 0 1rem;
-}
-
-img {
-  display: block;
-  max-width: 100%;
 }
 
 small {
@@ -144,6 +140,7 @@ td {
 
 .container {
   padding: 0 .5rem;
+  width: 100%
 
   @include mq($L) {
     max-width: 1200px;

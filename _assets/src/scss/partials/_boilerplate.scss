@@ -206,20 +206,26 @@ p {
   margin-top: 0;
 }
 
+/* SVGs
+-------------------------------------------------------------------*/
+svg {
+    fill: currentColor;
+}
+
 /* Lists
 ------------------------------------------------------------------------------ */
 ul,
 ol {
   margin: 0;
-  padding: 0 1em 1em;
+  padding: 0;
 }
 
 ul {
-  list-style-type: disc;
+  list-style: disc;
 }
 
 ol {
-  list-style-type: decimal;
+  list-style: decimal;
 }
 
 li {
@@ -232,6 +238,12 @@ dl {
   padding: 0 0 1em;
 }
 
+/* Forms
+-------------------------------------------------------------------*/
+label[for] {
+  cursor: pointer;
+}
+
 /* Code formatting
 ------------------------------------------------------------------------------ */
 pre {
@@ -242,6 +254,16 @@ code {
   background-color: $grey-light;
 }
 
+
+/* Disable CSS animations if user preference
+-------------------------------------------------------------------*/
+@media (prefers-reduced-motion: reduce) {
+  * {
+     animation: none !important; // sass-lint:disable-line no-important
+     transition: none !important; // sass-lint:disable-line no-important
+  }
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -250,6 +272,7 @@ code {
  * Hide visually and from screen readers:
  */
 
+[hidden],
 .hidden {
   display: none !important; // sass-lint:disable-line no-important
 }
@@ -397,7 +420,9 @@ code {
   }
 
   img {
-    max-width: 100% !important; // sass-lint:disable-line no-important
+    display: block;
+    height: auto;
+    max-width: 100%;
   }
 
   p,
