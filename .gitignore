@@ -11,3 +11,5 @@ _config/.DS_Store
 _assets/src/.DS_Store
 _assets/.DS_Store
 .DS_Store
+_config/sass-lint-output.html
+_config/sass-lint-output.html

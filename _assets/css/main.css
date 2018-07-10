@@ -1,4 +1,4 @@
-/* PROJECTNAME v1.0.0 - 2017-10-06-14-59 - Written by Mike Riley (pyrographicdesign AT gmail DOT com) */
+/* PROJECTNAME v1.0.0 - 2018-07-10-15-39 - Written by Mike Riley (pyrographicdesign AT gmail DOT com) */
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
@@ -409,6 +409,7 @@ html {
   box-sizing: border-box;
   color: #222;
   font-size: 100%;
+  line-height: 1.5;
   font-size: 1em;
 }
 @media (min-width: 18.75em) {
@@ -501,13 +502,14 @@ textarea {
 /* Skip link
 -------------------------------------------------------------------*/
 .skip-link {
+  padding: .5rem;
   position: absolute;
   right: 100%;
   top: 0;
 }
 
 .skip-link:focus {
-  left: calc(50%);
+  left: calc(50% - 84px);
   right: auto;
 }
 
@@ -516,7 +518,6 @@ textarea {
   (http://typecast.com/blog/a-more-modern-scale-for-web-typography)
 ------------------------------------------------------------------------------ */
 body {
-  font-size: 100%;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -526,100 +527,81 @@ body, caption, th, td, input, textarea, select, option, legend, fieldset, h1, h2
   font-size-adjust: .5;
 }
 
-main {
-  font-size: 1.125em;
-  line-height: 1.5;
-}
-@media (min-width: 45em) {
-  main {
-    font-size: 1.125em;
-    line-height: 1.66;
-  }
+/*
+ * Keep line-length to around 75 characters.
+ */
+p,
+blockquote,
+li {
+  max-width: 35rem;
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 1.5rem;
   line-height: 1.25;
 }
 @media (min-width: 45em) {
   h1 {
-    font-size: 2.5em;
+    font-size: 1.75rem;
     line-height: 1.125;
   }
 }
 @media (min-width: 75em) {
   h1 {
-    font-size: 3em;
+    font-size: 2rem;
     line-height: 1.05;
   }
 }
 
 h2 {
-  font-size: 1.625em;
+  font-size: 1.125rem;
   line-height: 1.15384615;
 }
 @media (min-width: 45em) {
   h2 {
-    font-size: 2em;
+    font-size: 1.25rem;
     line-height: 1.25;
   }
 }
 @media (min-width: 75em) {
   h2 {
-    font-size: 2.25em;
+    font-size: 1.375rem;
     line-height: 1.25;
   }
 }
 
 h3 {
-  font-size: 1.375em;
+  font-size: 1.0625rem;
   font-variant: small-caps;
   line-height: 1.13636364;
   text-transform: lowercase;
 }
 @media (min-width: 45em) {
   h3 {
-    font-size: 1.5em;
+    font-size: 1.125rem;
     line-height: 1.25;
   }
 }
 @media (min-width: 75em) {
   h3 {
-    font-size: 1.75em;
-    line-height: 1.25;
-  }
-}
-
-h4 {
-  font-size: 1.125em;
-  line-height: 1.11111111;
-}
-@media (min-width: 45em) {
-  h4 {
-    font-size: 1.25em;
-    line-height: 1.25;
-  }
-}
-@media (min-width: 75em) {
-  h4 {
-    font-size: 1.5em;
+    font-size: 1.1875rem;
     line-height: 1.25;
   }
 }
 
 blockquote {
-  font-size: 1.25em;
+  font-size: 1.25rem;
   line-height: 1.25;
 }
 @media (min-width: 45em) {
   blockquote {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     line-height: 1.25;
   }
 }
 @media (min-width: 75em) {
   blockquote {
-    font-size: 1.75em;
+    font-size: 1.75rem;
     line-height: 1.25;
   }
 }
@@ -636,20 +618,26 @@ p {
   margin-top: 0;
 }
 
+/* SVGs
+-------------------------------------------------------------------*/
+svg {
+  fill: currentColor;
+}
+
 /* Lists
 ------------------------------------------------------------------------------ */
 ul,
 ol {
   margin: 0;
-  padding: 0 1em 1em;
+  padding: 0;
 }
 
 ul {
-  list-style-type: disc;
+  list-style: disc;
 }
 
 ol {
-  list-style-type: decimal;
+  list-style: decimal;
 }
 
 li {
@@ -662,6 +650,12 @@ dl {
   padding: 0 0 1em;
 }
 
+/* Forms
+-------------------------------------------------------------------*/
+label[for] {
+  cursor: pointer;
+}
+
 /* Code formatting
 ------------------------------------------------------------------------------ */
 pre {
@@ -672,12 +666,22 @@ code {
   background-color: #ccc;
 }
 
+/* Disable CSS animations if user preference
+-------------------------------------------------------------------*/
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation: none !important;
+            animation: none !important;
+    transition: none !important;
+  }
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
 /*
  * Hide visually and from screen readers:
  */
+[hidden],
 .hidden {
   display: none !important;
 }
@@ -816,7 +820,9 @@ code {
   }
 
   img {
-    max-width: 100% !important;
+    display: block;
+    height: auto;
+    max-width: 100%;
   }
 
   p,
@@ -833,15 +839,14 @@ code {
 }
 body {
   background: #fff;
-  counter-reset: number;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
 }
 
 main {
-  padding: 2em 0;
+  padding: 2rem 0;
 }
 main p {
-  margin-bottom: 1.5em;
+  margin-bottom: 1rem;
 }
 main p:last-child {
   margin-bottom: 0;
@@ -855,67 +860,86 @@ main a {
 main a:hover, main a:active {
   color: #990000;
 }
+main ul {
+  margin-bottom: 1rem;
+}
 main ul li:before {
   color: #f00;
   content: '\2219';
-  margin-right: .5em;
+  margin-right: .5rem;
+}
+main ol {
+  counter-reset: number;
+  margin-bottom: 1rem;
 }
 main ol li:before {
   color: #f00;
   content: counter(number);
   counter-increment: number;
-  margin-right: .5em;
+  margin-right: .5rem;
 }
 main li {
-  margin-bottom: .5em;
-  padding-left: 1.5em;
-  text-indent: -1.5em;
+  margin-bottom: .5rem;
+  padding-left: 1.5rem;
+  text-indent: -1.5rem;
 }
 
 h2 {
-  margin-bottom: .5em;
+  margin-bottom: .5rem;
 }
 
 h3,
 h4,
 h5,
 h6 {
-  margin-bottom: .25em;
+  margin-bottom: .25rem;
 }
 
-ul,
-ol {
-  list-style-type: none;
-  margin: 0;
-  margin-bottom: 1em;
-  padding: 0;
+nav ul {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  list-style: none;
 }
 
 blockquote {
   border-left: 4px solid #f00;
-  font-size: 1.25em;
+  font-size: 1.25rem;
   font-style: italic;
-  padding: 0 1em;
-}
-
-img {
-  display: block;
-  max-width: 100%;
+  padding: 0 1rem;
 }
 
 small {
-  font-size: .85em;
-  margin-bottom: 1em;
+  font-size: .85rem;
+  margin-bottom: 1rem;
 }
 
-iframe {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
+.iframe-container {
+  height: 0;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.iframe-container.iframe-container-16x9 {
+  padding-bottom: 56.25%;
+}
+.iframe-container.iframe-container-4x3 {
+  padding-bottom: 75%;
+}
+.iframe-container iframe {
+  border: none;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 table {
-  margin-bottom: 2em;
+  margin-bottom: 2rem;
 }
 
 tr:nth-child(even) {
@@ -924,28 +948,22 @@ tr:nth-child(even) {
 
 th {
   border-bottom: 1px solid #f00;
-  padding: .5em;
+  padding: .5rem;
   padding-bottom: 0;
   text-align: left;
 }
 
 td {
-  padding: .5em;
+  padding: .5rem;
 }
 
 .container {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 .5em;
-}
-.container:after {
-  content: " ";
-  display: block;
-  clear: both;
+  padding: 0 .5rem;
+  width: 100%;
 }
 @media (min-width: 60em) {
   .container {
+    max-width: 1200px;
     padding: 0;
   }
 }
@@ -1047,7 +1065,7 @@ td {
     width: 75%;
   }
 }
-*[style],
+*:not(body)[style],
 a:not([href]),
 a[href="#"],
 a[href=""],
