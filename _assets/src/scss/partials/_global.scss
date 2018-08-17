@@ -7,7 +7,6 @@ body {
 }
 
 main {
-  padding: 2rem 0;
 
   p {
     margin-bottom: 1rem;
@@ -29,33 +28,7 @@ main {
     }
   }
 
-  ul {
-    margin-bottom: 1rem;
-
-    li {
-      &:before {
-        color: $highlight-clr;
-        content: '\2219';
-        margin-right: .5rem;
-      }
-    }
-  }
-
-  ol {
-    counter-reset: number;
-    margin-bottom: 1rem;
-
-    li {
-      &:before {
-        color: $highlight-clr;
-        content: counter(number);
-        counter-increment: number;
-        margin-right: .5rem;
-      }
-    }
-  }
-
-  li {
+  li.aligned-list {
     margin-bottom: .5rem;
     padding-left: 1.5rem;
     text-indent: -1.5rem;
@@ -91,6 +64,10 @@ blockquote {
 small {
   font-size: .85rem;
   margin-bottom: 1rem;
+}
+
+figure {
+  margin: 0 $space;
 }
 
 .iframe-container {
@@ -140,6 +117,9 @@ td {
 
 .container {
   padding: 0 .5rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1040px;
   width: 100%;
 
   @include mq($L) {

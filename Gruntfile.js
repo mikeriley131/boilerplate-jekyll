@@ -114,14 +114,20 @@
         report: 'min'
       },
       target: {
-        files: '<%= pkg.js %>'
+        files: {
+          '_assets/js/main.min.js': ['_assets/src/js/*.js']
+        }
       }
     },
 
     watch: {
       images: {
-        files: ['_assets/src/images/**/*.{png,jpg,gif}'],
-        tasks: ['imagemin'],
+        files: ['_assets/src/images/*.{png,jpg,gif}'],
+        tasks: ['imagemin']
+      },
+      svgs: {
+        files: ['_assets/src/images/*.svg'],
+        tasks: ['svgo'],
       },
       css: {
         files: '**/*.scss',
@@ -172,6 +178,4 @@
 
   // Default task
   grunt.registerTask('default', ['build', 'browserSync', 'watch']);
-
-  //grunt.registerTask('imagemin', ['imagemin']);
 };
