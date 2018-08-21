@@ -8,16 +8,28 @@ body {
 
 main {
 
-  p {
-    margin-bottom: 1rem;
+  p,
+  ul,
+  ol {
+    margin-bottom: $space;
 
     &:last-child {
       margin-bottom: 0;
     }
   }
 
+  ul.aligned-list {
+    margin-left: $half-space;
+
+    li {
+      margin-bottom: $half-space;
+      padding-left: $space;
+      text-indent: -$space;
+    }
+  }
+
   a {
-    border-bottom: 1px solid $link-clr;
+    border-bottom: 1px dashed $link-clr;
     color: $link-clr;
     padding-bottom: 2px;
     text-decoration: none;
@@ -26,12 +38,6 @@ main {
     &:active {
       color: $link-hover-clr;
     }
-  }
-
-  li.aligned-list {
-    margin-bottom: .5rem;
-    padding-left: 1.5rem;
-    text-indent: -1.5rem;
   }
 }
 

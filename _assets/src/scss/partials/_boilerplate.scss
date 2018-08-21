@@ -162,18 +162,18 @@ h2 {
 }
 
 h3 {
-  font-size: .75rem;
+  font-size: 1.125rem;
   font-variant: small-caps;
   line-height: 1.13636364;
   text-transform: lowercase;
 
   @include mq($M) {
-    font-size: .875rem;
+    font-size: 1.25rem;
     line-height: 1.25;
   }
 
   @include mq($XL) {
-    font-size: 1.1625rem;
+    font-size: 1.375rem;
     line-height: 1.25;
   }
 }
