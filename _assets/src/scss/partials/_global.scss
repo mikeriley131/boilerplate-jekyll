@@ -18,6 +18,10 @@ main {
     }
   }
 
+  ul {
+    list-style: none;
+  }
+
   ul.aligned-list {
     list-style: disc;
     margin-left: $half-space;
@@ -42,6 +46,7 @@ main {
   }
 }
 
+h1,
 h2 {
   margin-bottom: .5rem;
 }
