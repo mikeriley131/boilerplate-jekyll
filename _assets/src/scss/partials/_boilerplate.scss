@@ -108,27 +108,13 @@ textarea {
   right: auto;
 }
 
-/* Typography
-  modification of
-  (http://typecast.com/blog/a-more-modern-scale-for-web-typography)
------------------------------------------------------------------------------- */
-body {
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body, caption, th, td, input, textarea, select, option, legend, fieldset, h1, h2, h3, h4, h5, h6 {
-  font-size-adjust: .5;
-}
-
 /*
  * Keep line-length to around 45-55 characters.
  */
 p,
 blockquote,
 li {
-  max-width: 40rem;
+  max-width: 70ch;
 }
 
 h1 {
